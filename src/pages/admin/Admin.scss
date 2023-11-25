@@ -1,0 +1,38 @@
+.panel {
+  padding: 50px;
+
+  .panel-container {
+    display: flex;
+
+    .left {
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        li {
+          a {
+            padding: 10px;
+            display: block;
+            color: #333;
+            background-color: #e9e9e9;
+            width: 200px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              background-color: black;
+              color: #fff;
+            }
+          }
+
+          .active {
+            background-color: black;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .right {
+    }
+  }
+}
