@@ -1,0 +1,23 @@
+.contact-container {
+  padding: 20px 0px;
+
+  .user-reg {
+    width: 400px;
+    padding: 50px 0px;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input,
+      select,
+      button {
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+      }
+      button {
+        cursor: pointer;
+      }
+    }
+  }
+}
