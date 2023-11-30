@@ -2,6 +2,10 @@ import { useState } from "react";
 import PageHeader from "../../components/pageHeader/PageHeader";
 import "./Contact.scss";
 
+import Swal from "sweetalert2";
+
+import { createToast } from "../../helpers/helpers";
+
 const Contact = () => {
   const [input, setInput] = useState({
     name: "",
@@ -19,6 +23,36 @@ const Contact = () => {
     }));
   };
 
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+    if (
+      !input.name ||
+      !input.email ||
+      !input.cell ||
+      !input.pass ||
+      !input.location ||
+      !input.gender
+    ) {
+      createToast("All fields are required");
+      Swal.fire({
+        title: "Error!",
+        text: "All fields are required",
+        icon: "error",
+        confirmButtonText: "Ok",
+      });
+    } else {
+      createToast("Data stable", "success");
+      Swal.fire({
+        // position: "top-center",
+        icon: "success",
+        title: "Your work has been saved",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    }
+  };
+
   return (
     <>
       <PageHeader title="Contact" />
@@ -26,7 +60,7 @@ const Contact = () => {
         <h1>Contact</h1>
         <hr />
         <div className="user-reg">
-          <form action="">
+          <form onSubmit={handleFormSubmit}>
             <input
               type="text"
               placeholder="Name"

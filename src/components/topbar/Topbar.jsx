@@ -4,7 +4,12 @@ import { MdOutlineEmail } from "react-icons/md";
 
 import "./Topbar.scss";
 
+import { useContext } from "react";
+import MsgContext from "../../context/MsgContext";
+
 const Topbar = () => {
+  const { msg } = useContext(MsgContext);
+
   return (
     <div className="top-bar">
       <div className="container top-bar-container">
@@ -23,6 +28,10 @@ const Topbar = () => {
               info@sorobindu.com
             </li>
           </ul>
+        </div>
+
+        <div>
+          <h2>{msg}</h2>
         </div>
         <div className="top-bar-right">
           <Link>Log in</Link>
