@@ -4,7 +4,7 @@ import Admin from "../pages/admin/Admin";
 import Category from "../pages/admin/pages/Category";
 import Posts from "../pages/admin/pages/Posts";
 import Roles from "../pages/admin/pages/Roles";
-import Users from "../pages/admin/pages/users";
+import Users from "../pages/admin/pages/Users";
 
 export const privateRoute = [
   {
